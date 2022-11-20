@@ -9,7 +9,7 @@ const requireAuth = (req, res, next) => {
         jwt.verify(token, 'yohanes anjar', (err, decoded) => {
             if (err) {
                 console.log(err.message);
-                res.send('invalid token');
+                res.status(404).send('invalid token');
             } else {
                 req.userId = decoded.id
                 next();
@@ -17,7 +17,7 @@ const requireAuth = (req, res, next) => {
         })
     }
     else {
-        res.send('tidak ada token')
+        res.status(403).send('tidak ada token')
     }
 };
 
