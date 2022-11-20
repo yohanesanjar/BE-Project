@@ -1,4 +1,15 @@
 const User = require('../models/User');
+const bcrypt = require('bcrypt');
+
+const securePassword = async(password) => {
+    try {
+        const salt = await bcrypt.genSalt();
+        iniPassword = await bcrypt.hash(password, salt);
+        return iniPassword;
+    } catch (error) {
+        return error;
+    }
+}
 
 module.exports.user_get = (req, res) => {
     User.find()
@@ -31,13 +42,13 @@ module.exports.user_get_id = (req, res) => {
 }
 
 module.exports.user_edit = async (req, res) => {
-    const { full_name, username, email, password, status } = req.body;
-
+    
+    const { full_name, username, newPassword, email, status } = req.body;
+    const password = await securePassword(newPassword);
     try{
-        const user = await User.findByIdAndUpdate({_id: req.params.id}, {$set: { full_name, username, email, password, status
-        }})
+        const user = await User.findByIdAndUpdate({_id: req.params.id}, {$set: { full_name, username, password, email, status}})
         res.status(200).json({
-            user: user._id
+            user: 'Berhasil mengganti password'
         })
     }
     catch (err) {
