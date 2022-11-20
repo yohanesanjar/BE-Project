@@ -1,16 +1,6 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 
-const securePassword = async(password) => {
-    try {
-        const salt = await bcrypt.genSalt();
-        iniPassword = await bcrypt.hash(password, salt);
-        return iniPassword;
-    } catch (error) {
-        return error;
-    }
-}
-
 module.exports.user_get = (req, res) => {
     User.find()
     .then(data => {
@@ -43,12 +33,11 @@ module.exports.user_get_id = (req, res) => {
 
 module.exports.user_edit = async (req, res) => {
     
-    const { full_name, username, newPassword, email, status } = req.body;
-    const password = await securePassword(newPassword);
+    const { full_name, username, password, email, status } = req.body;
     try{
         const user = await User.findByIdAndUpdate({_id: req.params.id}, {$set: { full_name, username, password, email, status}})
         res.status(200).json({
-            user: 'Berhasil mengganti password'
+            user: 'Berhasil mengganti password '+user._id
         })
     }
     catch (err) {
