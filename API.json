@@ -1,0 +1,57 @@
+[[
+    {
+        "title": "seni tari",
+        "deskripsi": "seni untuk mengasah talenta"
+    },
+    {
+        "title": "seni musik",
+        "deskripsi": "seni untuk melatihmengasah talenta"
+    },
+    {
+        "judul": "tutorial tari",
+        "deskripsi": "melatih dan memberitau users",
+        "link":"https://seputarlampung.pikiran-rakyat.com/"
+    },    
+    {
+        "judul": "Cara tari",
+        "deskripsi": "mengajarkan tari",
+        "link":"https://seputarlampung.pikiran-rakyat.com/"
+    }   
+],
+
+
+[{
+    "full_name": "yohanes Project BE 15",
+    "username": "Project yohanes",
+    "email": "yohanes@gmail.com",
+    "password": "yohanes123",
+    "status": "user"
+  },
+  {
+    "full_name": "adimas Project BE 15",
+    "username": "Project adimas",
+    "email": "adimas@gmail.com",
+    "password": "adimas123",
+    "status": "user"
+  },
+  {
+    "full_name": "yunly Project BE 15",
+    "username": "Project yunly",
+    "email": "yunly@gmail.com",
+    "password": "yunly123",
+    "status": "user"
+  }],
+
+
+[{
+    "username": "Project yohanes",
+    "password": "yohanes123"
+  },
+  {
+    "username": "Project adi mas",
+    "password": "adimas123"
+  },
+  {
+    "username": "Project yunly",
+    "password": "yunly123"
+}]]
