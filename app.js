@@ -16,7 +16,7 @@ app.use(express.json());
 
 
 // database connection
-mongoose.connect('mongodb://anjardewantara:anjardewantara@ac-pxahqqo-shard-00-00.v79hqx9.mongodb.net:27017,ac-pxahqqo-shard-00-01.v79hqx9.mongodb.net:27017,ac-pxahqqo-shard-00-02.v79hqx9.mongodb.net:27017/be_project?ssl=true&replicaSet=atlas-vn0eqm-shard-0&authSource=admin&retryWrites=true&w=majority', {useNewUrlParser:true})
+mongoose.connect('mongodb://anjardewantara:anjardewantara@ac-pxahqqo-shard-00-00.v79hqx9.mongodb.net:27017,ac-pxahqqo-shard-00-01.v79hqx9.mongodb.net:27017,ac-pxahqqo-shard-00-02.v79hqx9.mongodb.net:27017/?ssl=true&replicaSet=atlas-vn0eqm-shard-0&authSource=admin&retryWrites=true&w=majority', {useNewUrlParser:true})
 .then(() => {
     console.log("connect to mongodb atlas");
 }).catch(error => {

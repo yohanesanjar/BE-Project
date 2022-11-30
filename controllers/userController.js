@@ -1,5 +1,4 @@
 const User = require('../models/User');
-const bcrypt = require('bcryptjs');
 
 module.exports.user_get = (req, res) => {
     User.find()
@@ -37,7 +36,7 @@ module.exports.user_edit = async (req, res) => {
     try{
         const user = await User.findByIdAndUpdate({_id: req.params.id}, {$set: { full_name, username, password, email, status}})
         res.status(200).json({
-            user: 'Berhasil mengganti password '+user._id
+            user: 'Berhasil update user '+user._id
         })
     }
     catch (err) {
